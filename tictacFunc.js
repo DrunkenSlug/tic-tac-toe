@@ -52,10 +52,14 @@ class Tictac{
           const oPlayer = document.getElementById('player2').innerText.toString();
           const check = this.score.x > this.score.o ? xPlayer : oPlayer;
           const winMessage = document.getElementById('winMessage');
-         (this.score.x > 0 || this.score.o > 0 || this.score.x === this.score.o  ? 
+          console.log(this.score.x !== this.score.o);
+         (this.score.x !== this.score.o
+             ? 
              winMessage.innerText = `${check} win` :
              winMessage.innerText = 'tie')
           this.clearInterval();
+          const removeListener = document.getElementById('gameBoxContainer');
+          removeListener.replaceWith(removeListener.cloneNode(true));
         
     }
     #calculateRightBox (index,length,name=''){
@@ -131,7 +135,8 @@ class Tictac{
              const xScore = document.getElementById('player1Score')
              const oScore = document.getElementById('player2Score')
              const score = this.score[this.turn] += 1;
-             console.log(score);
+             console.log(this.score);
+             console.log(this.score.x !== this.score.o);
              (this.turn === 'x' ? 
                xScore.innerText = score :
                oScore.innerText = score);
