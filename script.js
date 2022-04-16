@@ -16,14 +16,14 @@ const styleHeigh = document.getElementById('styleHeigh');
 const submit = document.getElementById('submit');
 styleBox.addEventListener('input', ()=> {
     const value = ~~styleBox.value;
-    
+
     console.log(value)
     box.style.width = `${value * 10}%`;
 })
 styleHeigh.addEventListener('input', ()=> {
     const value = ~~styleHeigh.value;
-    
-    
+
+
     box.style.height = `${value/3}rem`
     console.log(box.style.height)
 })
@@ -33,15 +33,15 @@ submit.addEventListener('click', ()=> {
     createData.width = box.clientWidth;
     createData.verticalBox = Math.floor(styleHeigh.value/10);
     createData.horizontalBox = styleBox.value;
-    
+    console.log(createData);
     player.player1.value ||= 'player1';
     player.player2.value ||= 'player2'
     const createElement =
     `<span id='player1'>${player.player1.value}</span> :
-    <span id="player1Score"> </span>
+    <span id="player1Score">0</span>
     <br>
     <span id='player2'>${player.player2.value} </span> :
-    <span id="player2Score"></span>
+    <span id="player2Score">0</span>
     <div id='turn' style='padding-top:5%;margin-bottom:5%;'>turn : x </div>
     <span class="timeBox block margin" id="time"> </span>
     <div class="container margin">

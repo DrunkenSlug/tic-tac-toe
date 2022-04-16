@@ -1,4 +1,4 @@
-@media {
+@media{
     .block {
         display: block;
     }
@@ -42,8 +42,11 @@
         z-index: 1;
     }
     .vertical {
+        position: absolute;
+        height: 100%;
         border: solid;
-        z-index: 0;
+        z-index:0;
+    
     }
     .horizontal {
         border: solid;
@@ -55,13 +58,18 @@
     }
     .diagonalLeft {
         border: solid;
+        position: absolute;
+        height: 100%;
         transform: scale(1.2) rotate(-33deg);
-
+        
         z-index: 0;
     }
     .diagonalRight {
+        position: absolute
+        height: 100%;
         border: solid;
         transform: scale(1.2) rotate(33deg);
+    
         z-index: 0;
     }
     .margin {
